@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Order Simulator</title>
+	<title>InventoryManager</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -26,12 +26,12 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
-	 <script data-require="angularjs@1.6.2" data-semver="1.6.2" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js"></script>
+	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
 <!--================================================================================================-->
-	<script src="app.js"></script
+	<script src="InventoryManager.js"></script
 </head>
 
-<body ng-app="myApp" ng-controller="orderController">
+<body ng-app="myApp" ng-controller="inventoryController">
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
@@ -45,7 +45,7 @@
 									<span class="focus-input100"></span>
 								</div>
 								<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Enter Quantity">
-									<input class="input100" type="number" ng-model="order.redquantity" placeholder="Quantity">
+									<input class="input100" type="number" ng-model="orders.redquantity" placeholder="Quantity">
 									<span class="focus-input100"></span>
 								</div>
 								<div class="wrap-input100 rs1-wrap-input100">
@@ -53,7 +53,7 @@
 									<span class="focus-input100"></span>
 								</div>
 								<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Enter Quantity">
-									<input class="input100" type="number" ng-model="order.greenquantity" placeholder="Quantity">
+									<input class="input100" type="number" ng-model="orders.greenquantity" placeholder="Quantity">
 									<span class="focus-input100"></span>
 								</div>
 								<div class="wrap-input100 rs1-wrap-input100">
@@ -61,7 +61,7 @@
 									<span class="focus-input100"></span>
 								</div>
 								<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Enter Quantity">
-									<input class="input100" type="number" ng-model="order.bluequantity" placeholder="Quantity">
+									<input class="input100" type="number" ng-model="orders.bluequantity" placeholder="Quantity">
 									<span class="focus-input100"></span>
 								</div>
 								<div class="wrap-input100 rs1-wrap-input100">
@@ -69,7 +69,7 @@
 									<span class="focus-input100"></span>
 								</div>
 								<div class="wrap-input100 rs2-wrap-input100 validate-input"  data-validate="Enter Quantity">
-									<input class="input100" type="number" ng-model="order.blackquantity" placeholder="Quantity">
+									<input class="input100" type="number" ng-model="orders.blackquantity" placeholder="Quantity">
 									<span class="focus-input100"></span>
 								</div>
 								<div class="wrap-input100 rs1-wrap-input100">
@@ -77,7 +77,7 @@
 									<span class="focus-input100"></span>
 								</div>
 								<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Enter Quantity">
-									<input class="input100" type="number" ng-model="order.brownquantity" placeholder="Quantity">
+									<input class="input100" type="number" ng-model="orders.brownquantity" placeholder="Quantity">
 									<span class="focus-input100"></span>
 								</div>
 								<div class="wrap-input100 rs1-wrap-input100">
@@ -85,7 +85,7 @@
 									<span class="focus-input100"></span>
 								</div>
 								<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Enter Quantity">
-									<input class="input100" type="number" ng-model="order.yellowquantity" placeholder="Quantity">
+									<input class="input100" type="number" ng-model="orders.yellowquantity" placeholder="Quantity">
 									<span class="focus-input100"></span>
 								</div>
 
@@ -115,28 +115,7 @@
 	<script src="vendor/bootstrap/js/popper.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-	<script>
-		$(".selection-2").select2({
-			minimumResultsForSearch: 20,
-			dropdownParent: $('#dropDownSelect1')
-		});
-	</script>
-<!--===============================================================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
 
-	  gtag('config', 'UA-23581568-13');
-	</script>
+
 </body>
 </html>
