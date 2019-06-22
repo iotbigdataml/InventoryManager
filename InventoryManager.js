@@ -9,17 +9,17 @@ myApp.controller('inventoryController', ['$scope', '$http', function($scope, $ht
     $scope.orders.push({'Red':$scope.orders.redquantity, 'Green':$scope.orders.greenquantity, 'Blue': $scope.orders.bluequantity, 'Black': $scope.orders.blackquantity, 'Brown': $scope.orders.brownquantity, 'Yellow':$scope.orders.yellowquantity});
 
     var dataObj = {
-				Red : $scope.orders.redquantity,
-				Green : $scope.orders.greenquantity,
-				Blue : $scope.orders.bluequantity,
-        Black: $scope.orders.blackquantity,
-        Brown: $scope.orders.brownquantity,
-        Yellow: $scope.orders.yellowquantity
+				1 : $scope.orders.redquantity,
+				2 : $scope.orders.greenquantity,
+				3 : $scope.orders.bluequantity,
+        4 : $scope.orders.blackquantity,
+        5 : $scope.orders.yellowquantity,
+        6 : $scope.orders.whitequantity
 		};
 
 
     //post http to send the json data to api
-    var res = $http.post('', dataObj);
+    var res = $http.post('/updateInventory', dataObj);
 		res.success(function(data, status, headers, config) {
 			$scope.message = data;
 		});
@@ -31,7 +31,7 @@ myApp.controller('inventoryController', ['$scope', '$http', function($scope, $ht
      $scope.orders.greenquantity = '';
      $scope.orders.bluequantity = '';
      $scope.orders.blackquantity = '';
-     $scope.orders.brownquantity = '';
+     $scope.orders.whitequantity = '';
      $scope.orders.yellowquantity = '';
 
   };
