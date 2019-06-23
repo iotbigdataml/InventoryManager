@@ -1,38 +1,96 @@
 var myApp = angular.module('myApp', []);
 myApp.controller('inventoryController', ['$scope', '$http', function($scope, $http) {
 
-  $scope.orders = [];
+  $scope.orders = {};
 
   //Update the inventory with the entered values
   $scope.placeOrder = function() {
 
-    $scope.orders.push({'Red':$scope.orders.redquantity, 'Green':$scope.orders.greenquantity, 'Blue': $scope.orders.bluequantity, 'Black': $scope.orders.blackquantity, 'Brown': $scope.orders.brownquantity, 'Yellow':$scope.orders.yellowquantity});
+    if($scope.orders.redquantity != 0)
+    {
+      //post http to send the json data to api
+      var res = $http.post('http://376da04e.ngrok.io/products/update/1', $scope.orders.redquantity);
+      res.success(function(data, status, headers, config) {
+        $scope.message = data;
+        alert($scope.message);
+      });
+      res.error(function(data, status, headers, config) {
+        alert( "failure message: " + JSON.stringify({data: data}));
+      });
+    }
+    if($scope.orders.greenquantity != 0)
+    {
+      //post http to send the json data to api
+      var res = $http.post('http://376da04e.ngrok.io/products/update/2', $scope.orders.greenquantity);
+      res.success(function(data, status, headers, config) {
+        $scope.message = data;
+        alert($scope.message);
+      });
+      res.error(function(data, status, headers, config) {
+        alert( "failure message: " + JSON.stringify({data: data}));
+      });
+    }
+    if($scope.orders.bluequantity != 0)
+    {
+      //post http to send the json data to api
+      var res = $http.post('http://376da04e.ngrok.io/products/update/3', $scope.orders.bluequantity);
+      res.success(function(data, status, headers, config) {
+        $scope.message = data;
+        alert($scope.message);
+      });
+      res.error(function(data, status, headers, config) {
+        alert( "failure message: " + JSON.stringify({data: data}));
+      });
+    }
+    if($scope.orders.blackquantity != 0)
+    {
+      //post http to send the json data to api
+      var res = $http.post('http://376da04e.ngrok.io/products/update/4', $scope.orders.blackquantity);
+      res.success(function(data, status, headers, config) {
+        $scope.message = data;
+        alert($scope.message);
+      });
+      res.error(function(data, status, headers, config) {
+        alert( "failure message: " + JSON.stringify({data: data}));
+      });
+    }
+    if($scope.orders.yellowquantity != 0)
+    {
+      //post http to send the json data to api
+      var res = $http.post('http://376da04e.ngrok.io/products/update/5', $scope.orders.yellowquantity);
+      res.success(function(data, status, headers, config) {
+        $scope.message = data;
+        alert($scope.message);
+      });
+      res.error(function(data, status, headers, config) {
+        alert( "failure message: " + JSON.stringify({data: data}));
+      });
+    }
+    if($scope.orders.whitequantity != 0)
+    {
+      //post http to send the json data to api
+      var res = $http.post('http://376da04e.ngrok.io/products/update/6', $scope.orders.whitequantity);
+      res.success(function(data, status, headers, config) {
+        $scope.message = data;
+        alert($scope.message);
+      });
+      res.error(function(data, status, headers, config) {
+        alert( "failure message: " + JSON.stringify({data: data}));
+      });
+    }
 
-    var dataObj = {
-				1 : $scope.orders.redquantity,
-				2 : $scope.orders.greenquantity,
-				3 : $scope.orders.bluequantity,
-        4 : $scope.orders.blackquantity,
-        5 : $scope.orders.yellowquantity,
-        6 : $scope.orders.whitequantity
-		};
 
 
-    //post http to send the json data to api
-    var res = $http.post('/updateInventory', dataObj);
-		res.success(function(data, status, headers, config) {
-			$scope.message = data;
-		});
-		res.error(function(data, status, headers, config) {
-			alert( "failure message: " + JSON.stringify({data: data}));
-		});
 
-    $scope.orders.redquantity = '';
-     $scope.orders.greenquantity = '';
-     $scope.orders.bluequantity = '';
-     $scope.orders.blackquantity = '';
-     $scope.orders.whitequantity = '';
-     $scope.orders.yellowquantity = '';
+
+
+
+    $scope.orders.redquantity = 0;
+     $scope.orders.greenquantity = 0;
+     $scope.orders.bluequantity = 0 ;
+     $scope.orders.blackquantity = 0;
+     $scope.orders.whitequantity = 0;
+     $scope.orders.yellowquantity = 0;
 
   };
 
