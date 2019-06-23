@@ -21,7 +21,7 @@ myApp.controller('inventoryController', ['$scope', '$http', function($scope, $ht
     if($scope.orders.greenquantity != 0)
     {
       //post http to send the json data to api
-      var res = $http.post('http://376da04e.ngrok.io/api/products/update/2', $scope.orders.greenquantity);
+      var res = $http.post('http://376da04e.ngrok.io/api/products/update/2', {"quantity": $scope.orders.greenquantity});
       res.success(function(data, status, headers, config) {
         $scope.message = data;
         alert($scope.message);
@@ -33,7 +33,7 @@ myApp.controller('inventoryController', ['$scope', '$http', function($scope, $ht
     if($scope.orders.bluequantity != 0)
     {
       //post http to send the json data to api
-      var res = $http.post('http://376da04e.ngrok.io/api/products/update/3', $scope.orders.bluequantity);
+      var res = $http.post('http://376da04e.ngrok.io/api/products/update/3', {"quantity":$scope.orders.bluequantity});
       res.success(function(data, status, headers, config) {
         $scope.message = data;
         alert($scope.message);
@@ -45,7 +45,7 @@ myApp.controller('inventoryController', ['$scope', '$http', function($scope, $ht
     if($scope.orders.blackquantity != 0)
     {
       //post http to send the json data to api
-      var res = $http.post('http://376da04e.ngrok.io/api/products/update/4', $scope.orders.blackquantity);
+      var res = $http.post('http://376da04e.ngrok.io/api/products/update/4', {"quantity":$scope.orders.blackquantity});
       res.success(function(data, status, headers, config) {
         $scope.message = data;
         alert($scope.message);
@@ -57,7 +57,7 @@ myApp.controller('inventoryController', ['$scope', '$http', function($scope, $ht
     if($scope.orders.yellowquantity != 0)
     {
       //post http to send the json data to api
-      var res = $http.post('http://376da04e.ngrok.io/api/products/update/5', $scope.orders.yellowquantity);
+      var res = $http.post('http://376da04e.ngrok.io/api/products/update/5', {"quantity":$scope.orders.yellowquantity});
       res.success(function(data, status, headers, config) {
         $scope.message = data;
         alert($scope.message);
@@ -69,7 +69,7 @@ myApp.controller('inventoryController', ['$scope', '$http', function($scope, $ht
     if($scope.orders.whitequantity != 0)
     {
       //post http to send the json data to api
-      var res = $http.post('http://376da04e.ngrok.io/api/products/update/6', $scope.orders.whitequantity);
+      var res = $http.post('http://376da04e.ngrok.io/api/products/update/6', {"quantity":$scope.orders.whitequantity});
       res.success(function(data, status, headers, config) {
         $scope.message = data;
         alert($scope.message);
