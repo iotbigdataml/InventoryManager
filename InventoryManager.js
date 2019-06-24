@@ -104,25 +104,37 @@ myApp.controller('inventoryController', ['$scope', '$http', function($scope, $ht
 
 // this function retrieves the quantity of items from inventory
 
-  $scope.viewInventory = function(){
+setInterval(function(){
+  var res = $http.post('http://ec2-35-170-187-70.compute-1.amazonaws.com:3000/api/products/view', {"":""});
+  res.success(function(data, status, headers, config) {
+    $scope.quantity = data;
+    $scope.orders.red = $scope.quantity.products[0].qtyInStock;
+     $scope.orders.green = $scope.quantity.products[1].qtyInStock;
+     $scope.orders.blue = $scope.quantity.products[2].qtyInStock ;
+     $scope.orders.black = $scope.quantity.products[3].qtyInStock;
+     $scope.orders.yellow = $scope.quantity.products[4].qtyInStock;
+      $scope.orders.white = $scope.quantity.products[5].qtyInStock;
+  });
+  res.error(function(data, status, headers, config) {
+    alert( "failure message: " + JSON.stringify({data: data}));
+  });
 
-    var res = $http.post('http://ec2-35-170-187-70.compute-1.amazonaws.com:3000/api/products/view', {"":""});
-    res.success(function(data, status, headers, config) {
-      $scope.quantity = data;
-      $scope.orders.redquantity = $scope.quantity.products[0].qtyInStock;
-       $scope.orders.greenquantity = $scope.quantity.products[1].qtyInStock;
-       $scope.orders.bluequantity = $scope.quantity.products[2].qtyInStock ;
-       $scope.orders.blackquantity = $scope.quantity.products[3].qtyInStock;
-       $scope.orders.whitequantity = $scope.quantity.products[4].qtyInStock;
-       $scope.orders.yellowquantity = $scope.quantity.products[5].qtyInStock;
+},1000);
 
-    });
-    res.error(function(data, status, headers, config) {
-      alert( "failure message: " + JSON.stringify({data: data}));
-    });
-
-
-  }
+  // $scope.viewInventory = function(){
+  //
+  //   var res = $http.post('http://ec2-35-170-187-70.compute-1.amazonaws.com:3000/api/products/view', {"":""});
+  //   res.success(function(data, status, headers, config) {
+  //     $scope.quantity = data;
+  //     $scope.orders.red = $scope.quantity.products[0].qtyInStock;
+  //      $scope.orders.green = $scope.quantity.products[1].qtyInStock;
+  //      $scope.orders.blue = $scope.quantity.products[2].qtyInStock ;
+  //      $scope.orders.black = $scope.quantity.products[3].qtyInStock;
+  //      $scope.orders.yellow = $scope.quantity.products[4].qtyInStock;
+  //       $scope.orders.white = $scope.quantity.products[5].qtyInStock;
+  //   });
+  //   res.error(function(data, status, headers, config) {
+  //     alert( "failure message: " + JSON.stringify({data: data}));
 
 
 

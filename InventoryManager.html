@@ -37,7 +37,7 @@
 		<div class="wrap-contact100">
 			<form class="contact100-form validate-form" ng-submit="placeOrder()">
 								<span class="contact100-form-title">
-									Update / View Inventory
+									Update Inventory
 								</span>
 								<label class="label-input100" for="first-name">Tell us your requirements</label>
 								<div class="wrap-input100 rs1-wrap-input100">
@@ -73,14 +73,6 @@
 									<span class="focus-input100"></span>
 								</div>
 								<div class="wrap-input100 rs1-wrap-input100">
-									<input class="input100" type="text" placeholder="" value="White" readonly>
-									<span class="focus-input100"></span>
-								</div>
-								<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Enter Quantity">
-									<input class="input100" type="number" ng-model="orders.whitequantity" placeholder="Quantity">
-									<span class="focus-input100"></span>
-								</div>
-								<div class="wrap-input100 rs1-wrap-input100">
 									<input class="input100" type="text" placeholder="" value="Yellow" readonly>
 									<span class="focus-input100"></span>
 								</div>
@@ -88,27 +80,81 @@
 									<input class="input100" type="number" ng-model="orders.yellowquantity" placeholder="Quantity">
 									<span class="focus-input100"></span>
 								</div>
-
+								<div class="wrap-input100 rs1-wrap-input100">
+									<input class="input100" type="text" placeholder="" value="White" readonly>
+									<span class="focus-input100"></span>
+								</div>
+								<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Enter Quantity">
+									<input class="input100" type="number" ng-model="orders.whitequantity" placeholder="Quantity">
+									<span class="focus-input100"></span>
+								</div>
 								<div class="container-contact100-form-btn">
 									<button type="submit" class="contact100-form-btn">
 									Update Inventory
 									</button>
 								</div>
 
-								<div class="container-contact100-form-btn">
-										<button ng-click="viewInventory()" class="contact100-form-btn">
-										View Inventory
-										</button>
-								 	 	</div>
+			</form>
+
+			<form class="contact100-form validate-form" ng-submit="viewInventory()">
+								<span class="contact100-form-title">
+									View Inventory
+								</span>
+								<label class="label-input100" for="first-name">	Items remaining</label>
+								<div class="wrap-input100 rs1-wrap-input100">
+									<input  class="input100" type="text" placeholder="" value="Red" readonly>
+									<span class="focus-input100"></span>
+								</div>
+								<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Enter Quantity">
+									<input class="input100" type="number" ng-model="orders.red" placeholder="Quantity" readonly>
+									<span class="focus-input100"></span>
+								</div>
+								<div class="wrap-input100 rs1-wrap-input100">
+									<input class="input100" type="text" placeholder="" value="Green" readonly>
+									<span class="focus-input100"></span>
+								</div>
+								<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Enter Quantity">
+									<input class="input100" type="number" ng-model="orders.green" placeholder="Quantity" readonly>
+									<span class="focus-input100"></span>
+								</div>
+								<div class="wrap-input100 rs1-wrap-input100">
+									<input class="input100" type="text" placeholder="" value="Blue" readonly>
+									<span class="focus-input100"></span>
+								</div>
+								<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Enter Quantity">
+									<input class="input100" type="number" ng-model="orders.blue" placeholder="Quantity" readonly>
+									<span class="focus-input100"></span>
+								</div>
+								<div class="wrap-input100 rs1-wrap-input100">
+									<input class="input100" type="text" placeholder="" value="Black" readonly>
+									<span class="focus-input100"></span>
+								</div>
+								<div class="wrap-input100 rs2-wrap-input100 validate-input"  data-validate="Enter Quantity">
+									<input class="input100" type="number" ng-model="orders.black" placeholder="Quantity" readonly>
+									<span class="focus-input100"></span>
+								</div>
+								<div class="wrap-input100 rs1-wrap-input100">
+									<input class="input100" type="text" placeholder="" value="Yellow" readonly>
+									<span class="focus-input100"></span>
+								</div>
+								<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Enter Quantity">
+									<input class="input100" type="number" ng-model="orders.yellow" placeholder="Quantity" readonly>
+									<span class="focus-input100"></span>
+								</div>
+								<div class="wrap-input100 rs1-wrap-input100">
+									<input class="input100" type="text" placeholder="" value="White" readonly>
+									<span class="focus-input100"></span>
+								</div>
+								<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Enter Quantity">
+									<input class="input100" type="number" ng-model="orders.white" placeholder="Quantity" readonly>
+									<span class="focus-input100"></span>
+								</div>
 
 
 			</form>
 
 
-			<div class="contact100-more flex-col-c-m" style="background-image: url('images/bg-01.jpg');">
-				<h2 style="color:white;">Team 2</h2>
-				<h2 style="color:white;">Inventory Manager</h2>
-			</div>
+
 		</div>
 	</div>
 
