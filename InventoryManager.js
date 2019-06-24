@@ -1,21 +1,7 @@
 var myApp = angular.module('myApp', []);
 myApp.controller('inventoryController', ['$scope', '$http', function($scope, $http) {
 
-
-//   $http({
-//   method: 'GET',
-//   url: 'http://127.0.0.1:8081/url.txt'
-// }).then(function successCallback(response) {
-//
-//   $scope.urlobj = response.data;
-//
-// }, function errorCallback(response) {
-//
-//   alert("Error. Try Again!");
-//
-// })
-
-  $scope.orders = {};
+$scope.orders = {};
 
   //Update the inventory with the entered values
   $scope.placeOrder = function() {
@@ -29,7 +15,7 @@ myApp.controller('inventoryController', ['$scope', '$http', function($scope, $ht
 
       });
       res.error(function(data, status, headers, config) {
-        alert( "failure message: " + JSON.stringify({data: data}));
+        console.log( "failure message: " + JSON.stringify({data: data}));
       });
     }
     if($scope.orders.greenquantity != 0)
@@ -41,7 +27,7 @@ myApp.controller('inventoryController', ['$scope', '$http', function($scope, $ht
 
       });
       res.error(function(data, status, headers, config) {
-        alert( "failure message: " + JSON.stringify({data: data}));
+        console.log( "failure message: " + JSON.stringify({data: data}));
       });
     }
     if($scope.orders.bluequantity != 0)
@@ -53,7 +39,7 @@ myApp.controller('inventoryController', ['$scope', '$http', function($scope, $ht
 
       });
       res.error(function(data, status, headers, config) {
-        alert( "failure message: " + JSON.stringify({data: data}));
+        console.log( "failure message: " + JSON.stringify({data: data}));
       });
     }
     if($scope.orders.blackquantity != 0)
@@ -65,7 +51,7 @@ myApp.controller('inventoryController', ['$scope', '$http', function($scope, $ht
 
       });
       res.error(function(data, status, headers, config) {
-        alert( "failure message: " + JSON.stringify({data: data}));
+        console.log( "failure message: " + JSON.stringify({data: data}));
       });
     }
     if($scope.orders.yellowquantity != 0)
@@ -77,7 +63,7 @@ myApp.controller('inventoryController', ['$scope', '$http', function($scope, $ht
 
       });
       res.error(function(data, status, headers, config) {
-        alert( "failure message: " + JSON.stringify({data: data}));
+        console.log( "failure message: " + JSON.stringify({data: data}));
       });
     }
     if($scope.orders.whitequantity != 0)
@@ -89,7 +75,7 @@ myApp.controller('inventoryController', ['$scope', '$http', function($scope, $ht
 
       });
       res.error(function(data, status, headers, config) {
-        alert( "failure message: " + JSON.stringify({data: data}));
+        console.log( "failure message: " + JSON.stringify({data: data}));
       });
     }
 
@@ -116,7 +102,7 @@ setInterval(function(){
       $scope.orders.white = $scope.quantity.products[5].qtyInStock;
   });
   res.error(function(data, status, headers, config) {
-    alert( "failure message: " + JSON.stringify({data: data}));
+    console.log( "failure message: " + JSON.stringify({data: data}));
   });
 
 },1000);
