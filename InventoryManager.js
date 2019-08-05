@@ -2,14 +2,14 @@ var myApp = angular.module('myApp', []);
 myApp.controller('inventoryController', ['$scope', '$http', function($scope, $http) {
 
 $scope.orders = {};
-
+$scope.server_url="http://ec2-54-146-209-94.compute-1.amazonaws.com:3000/api";
   //Update the inventory with the entered values
   $scope.placeOrder = function() {
 
     if($scope.orders.redquantity != 0)
     {
       //post http to send the json data to api
-      var res = $http.post('http://ec2-35-170-187-70.compute-1.amazonaws.com:3000/api/products/update/1',{ "quantity":$scope.orders.redquantity});
+      var res = $http.post($scope.server_url+'/products/update/1',{ "quantity":$scope.orders.redquantity});
       res.success(function(data, status, headers, config) {
         $scope.message = data;
 
@@ -21,7 +21,7 @@ $scope.orders = {};
     if($scope.orders.greenquantity != 0)
     {
       //post http to send the json data to api
-      var res = $http.post('http://ec2-35-170-187-70.compute-1.amazonaws.com:3000/api/products/update/2', {"quantity": $scope.orders.greenquantity});
+      var res = $http.post($scope.server_url+'/products/update/2', {"quantity": $scope.orders.greenquantity});
       res.success(function(data, status, headers, config) {
         $scope.message = data;
 
@@ -33,7 +33,7 @@ $scope.orders = {};
     if($scope.orders.bluequantity != 0)
     {
       //post http to send the json data to api
-      var res = $http.post('http://ec2-35-170-187-70.compute-1.amazonaws.com:3000/api/products/update/3', {"quantity":$scope.orders.bluequantity});
+      var res = $http.post($scope.server_url+ '/products/update/3', {"quantity":$scope.orders.bluequantity});
       res.success(function(data, status, headers, config) {
         $scope.message = data;
 
@@ -45,7 +45,7 @@ $scope.orders = {};
     if($scope.orders.blackquantity != 0)
     {
       //post http to send the json data to api
-      var res = $http.post('http://ec2-35-170-187-70.compute-1.amazonaws.com:3000/api/products/update/4', {"quantity":$scope.orders.blackquantity});
+      var res = $http.post($scope.server_url+ '/products/update/4', {"quantity":$scope.orders.blackquantity});
       res.success(function(data, status, headers, config) {
         $scope.message = data;
 
@@ -57,7 +57,7 @@ $scope.orders = {};
     if($scope.orders.yellowquantity != 0)
     {
       //post http to send the json data to api
-      var res = $http.post('http://ec2-35-170-187-70.compute-1.amazonaws.com:3000/api/products/update/5', {"quantity":$scope.orders.yellowquantity});
+      var res = $http.post($scope.server_url+ '/products/update/5', {"quantity":$scope.orders.yellowquantity});
       res.success(function(data, status, headers, config) {
         $scope.message = data;
 
@@ -69,7 +69,7 @@ $scope.orders = {};
     if($scope.orders.whitequantity != 0)
     {
       //post http to send the json data to api
-      var res = $http.post('http://ec2-35-170-187-70.compute-1.amazonaws.com:3000/api/products/update/6', {"quantity":$scope.orders.whitequantity});
+      var res = $http.post($scope.server_url+ '/products/update/6', {"quantity":$scope.orders.whitequantity});
       res.success(function(data, status, headers, config) {
         $scope.message = data;
 
@@ -91,7 +91,7 @@ $scope.orders = {};
 // this function retrieves the quantity of items from inventory
 
 setInterval(function(){
-  var res = $http.post('http://ec2-35-170-187-70.compute-1.amazonaws.com:3000/api/products/view', {"":""});
+  var res = $http.post($scope.server_url+'/products/view/', {"":""});
   res.success(function(data, status, headers, config) {
     $scope.quantity = data;
     $scope.orders.red = $scope.quantity.products[0].qtyInStock;
